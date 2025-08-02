@@ -1,4 +1,4 @@
-import { sequelize } from "../lib/db";
+import { sequelize } from "../lib/db.js";
 
 export default function handler(req, res) {
   res.status(200).json({
