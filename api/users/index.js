@@ -1,4 +1,4 @@
-import { initModels } from "../../models/init-models";
+import { initModels } from "../../models/init-models.js";
 import { sequelize } from "../../lib/db.js";
 
 const { Users } = initModels(sequelize);
@@ -14,11 +14,9 @@ export default async function handler(req, res) {
 
     const existingUser = await Users.findOne({ where: { email } });
     if (existingUser)
-      return res
-        .status(400)
-        .json({
-          msg: "El correo ya se encuentra registrado, intenta con otro",
-        });
+      return res.status(400).json({
+        msg: "El correo ya se encuentra registrado, intenta con otro",
+      });
 
     const user = await Users.create({
       name,

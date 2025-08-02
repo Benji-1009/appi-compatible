@@ -1,4 +1,4 @@
-import { initModels } from "../../models/init-models";
+import { initModels } from "../../models/init-models.js";
 import { sequelize } from "../../lib/db.js";
 
 const { Users } = initModels(sequelize);
